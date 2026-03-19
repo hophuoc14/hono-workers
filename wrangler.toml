@@ -19,6 +19,7 @@ id = "bc7c02b3cd6f408495b6f8a1ed332063"
 binding = "hono_app_db"
 database_name = "hono-app-db"
 database_id = "bc586377-b72c-4db8-a9ff-979f63be658c"
+migrations_dir = "migrations"
 # preview_database_id = "your-preview-d1-database-id"
 
 # # R2 Bucket

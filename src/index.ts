@@ -11,7 +11,6 @@ import { healthRoutes } from './routes/health'
 import { cacheRoutes } from './routes/cache'
 import { usersRoutes } from './routes/users'
 import { filesRoutes } from './routes/files'
-import { counterRoutes } from './routes/counter'
 import { tasksRoutes } from './routes/tasks'
 import { barcodeRoutes } from './routes/barcode'
 
@@ -41,7 +40,6 @@ app.route('/api/health', healthRoutes)
 app.route('/api/cache', cacheRoutes)
 app.route('/api/users', usersRoutes)
 app.route('/api/files', filesRoutes)
-app.route('/api/counter', counterRoutes)
 app.route('/api/tasks', tasksRoutes)
 app.route('/api/barcode', barcodeRoutes)
 
