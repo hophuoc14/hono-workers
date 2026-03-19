@@ -11,36 +11,36 @@ APP_NAME = "Hono Cloudflare App"
 # KV Namespaces
 [[kv_namespaces]]
 binding = "CACHE"
-id = "your-kv-namespace-id"
-preview_id = "your-preview-kv-namespace-id"
+id = "bc7c02b3cd6f408495b6f8a1ed332063"
+# preview_id = "your-preview-kv-namespace-id"
 
 # D1 Database
 [[d1_databases]]
-binding = "DB"
+binding = "hono_app_db"
 database_name = "hono-app-db"
-database_id = "your-d1-database-id"
-preview_database_id = "your-preview-d1-database-id"
+database_id = "bc586377-b72c-4db8-a9ff-979f63be658c"
+# preview_database_id = "your-preview-d1-database-id"
 
-# R2 Bucket
-[[r2_buckets]]
-binding = "BUCKET"
-bucket_name = "hono-app-bucket"
+# # R2 Bucket
+# [[r2_buckets]]
+# binding = "BUCKET"
+# bucket_name = "hono-app-bucket"
 
-# Durable Objects
-[[durable_objects.bindings]]
-name = "COUNTER"
-class_name = "Counter"
+# # Durable Objects
+# [[durable_objects.bindings]]
+# name = "COUNTER"
+# class_name = "Counter"
 
-# Queues
-[[queues.producers]]
-binding = "MY_QUEUE"
-queue = "hono-app-queue"
+# # Queues
+# [[queues.producers]]
+# binding = "MY_QUEUE"
+# queue = "hono-app-queue"
 
-# Consumers
-[[queues.consumers]]
-queue = "hono-app-queue"
-max_batch_size = 10
-max_batch_timeout = 30
+# # Consumers
+# [[queues.consumers]]
+# queue = "hono-app-queue"
+# max_batch_size = 10
+# max_batch_timeout = 30
 
 # Triggers (Cron)
 [triggers]

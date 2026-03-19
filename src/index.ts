@@ -13,6 +13,7 @@ import { usersRoutes } from './routes/users'
 import { filesRoutes } from './routes/files'
 import { counterRoutes } from './routes/counter'
 import { tasksRoutes } from './routes/tasks'
+import { barcodeRoutes } from './routes/barcode'
 
 // Import Durable Object
 import { Counter } from './durable-objects/counter'
@@ -42,6 +43,7 @@ app.route('/api/users', usersRoutes)
 app.route('/api/files', filesRoutes)
 app.route('/api/counter', counterRoutes)
 app.route('/api/tasks', tasksRoutes)
+app.route('/api/barcode', barcodeRoutes)
 
 // 404 handler
 app.notFound((c) => {
@@ -59,21 +61,21 @@ export default {
   fetch: app.fetch,
 
   // Queue consumer
-  async queue(batch: MessageBatch, env: Bindings): Promise<void> {
-    for (const message of batch.messages) {
-      const { type, data } = message.body as { type: string; data: any }
+  // async queue(batch: MessageBatch, env: Bindings): Promise<void> {
+  //   for (const message of batch.messages) {
+  //     const { type, data } = message.body as { type: string; data: any }
 
-      try {
-        console.log(`Processing ${type}:`, data)
-        // Process the task here
-        await processTask(type, data, env)
-        message.ack()
-      } catch (error) {
-        console.error('Queue processing error:', error)
-        message.retry()
-      }
-    }
-  },
+  //     try {
+  //       console.log(`Processing ${type}:`, data)
+  //       // Process the task here
+  //       await processTask(type, data, env)
+  //       message.ack()
+  //     } catch (error) {
+  //       console.error('Queue processing error:', error)
+  //       message.retry()
+  //     }
+  //   }
+  // },
 
   // Scheduled events (cron)
   async scheduled(event: ScheduledEvent, env: Bindings, ctx: ExecutionContext): Promise<void> {
